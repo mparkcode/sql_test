@@ -1,21 +1,25 @@
-# Your Project's Name
+# Space Portal
 
-One or two paragraphs providing an overview of your project.
-
-Essentially, this part is your sales pitch.
+This project is meant to be a sleek dashboard for space-related activity
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+- As a space enthusiast, I want to know when the ISS is going to fly over my house so I can track it with my family
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+- As a Satellite vendor, I want to get the most updated news stories to see what is happening in the industry
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+- As a blogger and former astronaut, I want to be able to email the creators of Space Portal to recommend content they should add to their website. 
+
+![Wireframe](assets/wireframe/wireframe.jpg)
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+Quickly connects users to some of the interesting aspects of space and also presents them with current information
+
+NASA Image of the Day
+ISS Feed and Overpass Calculation based on user location
+Social Media Feed
+Contact Us Page
  
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
@@ -34,6 +38,11 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
+- Javascript
+- CSS
+- HTML
+- Leaflet
+- APIs
 
 
 ## Testing

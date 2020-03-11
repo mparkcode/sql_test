@@ -1,0 +1,9 @@
+/*---------------Text---------------*/
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+h2, h3, p, li {
+    font-family: 'Source Code Pro', monospace;
+}
