@@ -10,44 +10,68 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron|Source+Code+Pro&display=swap" rel="stylesheet">
+    <!--jQuery-->
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+        <!--Leaflet-->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+		crossorigin=""></script>
+ 
 	<title>Space Portal</title>
 </head>
-
+ 
 <body>
 	<!--Navbar and Jumbotron-->
-	<div class="container-fluid">
-		<nav class="navbar">
-			<ul class="nav navbar-nav">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#iss">ISS Location</a></li>
-				<li><a href="#news">Space News</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
-	</div>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+		<ul class="navbar-nav">
+			<li><a href="#home" class="nav-link">Home</a></li>
+			<li><a href="#iss" class="nav-link">ISS Location</a></li>
+			<li><a href="#news" class="nav-link">Space News</a></li>
+			<li><a href="#contact" class="nav-link">Contact</a></li>
+		</ul>
+	</nav>
 
 	<!--Jumbotron-->
 
-	<header class="jumbotron">
-		<div class="container-fluid top">
+	<div class="container-fluid">
+		<header class="jumbotron">
 			<h1>Welcome to Space Portal</h1>
 			<p>Access the cosmos</p>
-		</div>
-	</header>
-	<!--NASA Image of the Day-->
+		</header>
+	</div>
+
+	<!--NASA Astronomy Picture of the Day-->
+
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row apod">
 			<thing id="img"></thing>
-			<p id="copyright"></p>
+		</div>
+		<div class="pt-3">
 			<h1 id="title"></h1>
 			<p id="explanation"></p>
+			<p id="copyright"></p>
 		</div>
 	</div>
-	<!--ISS Information-->
 
+	<!--ISS Information-->
+	<div class="container-fluid pt-3" id="iss" style="height: 200px;">
+		<h1 id="iss">International Space Station (ISS)</h1>
+		<div class="row">
+			<div class="col-sm-8">
+				<h2> map </h2>
+                <div id="mapid"></div>
+			</div>
+			<div class="col-sm-4">
+				<h2> ISS info </h2>
+			</div>
+		</div>
+	</div>
 	<!--Misc Content-->
 
 	<!--SpaceFlight Now-->
@@ -56,7 +80,7 @@
 
 </body>
 <script>
-$.ajax({
+	$.ajax({
     url:"https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
     success: function(APOD){
         document.getElementById("img").innerHTML="<img src="+APOD.url+" sytle='width:100%;' />";
@@ -66,5 +90,7 @@ $.ajax({
     }
 });
 </script>
+
+<script src="assets/js/portal.js"></script>
 
 </html>

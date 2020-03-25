@@ -7,3 +7,19 @@ h1 {
 h2, h3, p, li {
     font-family: 'Source Code Pro', monospace;
 }
+
+.jumbotron {
+    margin-top: 2rem;
+}
+
+.navbar li {
+    font-family:'Orbitron', monospace;
+}
+
+.apod {
+    justify-content: center;
+}
+
+#mapid { 
+    height: 300px; 
+}
