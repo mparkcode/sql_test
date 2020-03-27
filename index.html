@@ -63,33 +63,24 @@
 	<div class="container-fluid pt-3" id="iss" style="height: 200px;">
 		<h1 id="iss">International Space Station (ISS)</h1>
 		<div class="row">
-			<div class="col-sm-8">
-				<h2> map </h2>
+			<div class="col-sm-6">
+				<h2> ISS position </h2>
                 <div id="mapid"></div>
 			</div>
-			<div class="col-sm-4">
+			<div class="col-sm-6">
 				<h2> ISS info </h2>
+                <p>Click the button to find out your current positon</p>
+                    <button onclick="getLocation()">Calculate</button>
+                    <p id="overpass"></p>   
 			</div>
 		</div>
 	</div>
-	<!--Misc Content-->
-
 	<!--SpaceFlight Now-->
 
 	<!--Contact Us-->
 
 </body>
-<script>
-	$.ajax({
-    url:"https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
-    success: function(APOD){
-        document.getElementById("img").innerHTML="<img src="+APOD.url+" sytle='width:100%;' />";
-        document.getElementById("copyright").innerHTML="By "+APOD.copyright;
-        document.getElementById("title").innerHTML=APOD.title;
-        document.getElementById("explanation").innerHTML=APOD.explanation;
-    }
-});
-</script>
+
 
 <script src="assets/js/portal.js"></script>
 
