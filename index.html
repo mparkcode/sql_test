@@ -10,21 +10,21 @@
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Orbitron|Source+Code+Pro&display=swap" rel="stylesheet">
-    <!--jQuery-->
+	<!--jQuery-->
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 	<script src="https://code.jquery.com/jquery-3.4.1.js"
 		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-        <!--Leaflet-->
+	<!--Leaflet-->
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
 		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 		crossorigin="" />
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
 		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 		crossorigin=""></script>
- 
+
 	<title>Space Portal</title>
 </head>
- 
+
 <body>
 	<!--Navbar and Jumbotron-->
 
@@ -60,22 +60,96 @@
 	</div>
 
 	<!--ISS Information-->
-	<div class="container-fluid pt-3" id="iss" style="height: 200px;">
+	<div class="container-fluid pt-3" id="iss">
 		<h1 id="iss">International Space Station (ISS)</h1>
 		<div class="row">
 			<div class="col-sm-6">
 				<h2> ISS position </h2>
-                <div id="mapid"></div>
+				<div id="mapid"></div>
 			</div>
 			<div class="col-sm-6">
 				<h2> ISS info </h2>
-                <p>Click the button to find out your current positon</p>
-                    <button onclick="getLocation()">Calculate</button>
-                    <p id="overpass"></p>   
+				<p>Click the button to find out your current positon</p>
+				<button onclick="getLocation()">Calculate</button>
+				<p id="overpass"></p>
 			</div>
 		</div>
 	</div>
 	<!--SpaceFlight Now-->
+
+	<div class="container-fluid pt-3" id="spaceflight-div">
+		<h1 id="news">Space News</h1>
+		<div class="row">
+			<div class="col-sm-4" style="padding: 3px">
+				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
+					<div class="card-body">
+						<div class="card-title h4" id="news-title"><a
+								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
+								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
+								already under construction</a></div>
+						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
+					</div>
+				</div>
+			</div>
+            <div class="col-sm-4" style="padding: 3px">
+				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
+					<div class="card-body">
+						<div class="card-title h4" id="news-title"><a
+								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
+								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
+								already under construction</a></div>
+						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
+					</div>
+				</div>
+			</div>
+            <div class="col-sm-4" style="padding: 3px">
+				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
+					<div class="card-body">
+						<div class="card-title h4" id="news-title"><a
+								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
+								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
+								already under construction</a></div>
+						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4" style="padding: 3px">
+				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
+					<div class="card-body">
+						<div class="card-title h4" id="news-title"><a
+								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
+								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
+								already under construction</a></div>
+						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4" style="padding: 3px">
+				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
+					<div class="card-body">
+						<div class="card-title h4" id="news-title"><a
+								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
+								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
+								already under construction</a></div>
+						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4" style="padding: 3px">
+				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
+					<div class="card-body">
+						<div class="card-title h4" id="news-title"><a
+								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
+								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
+								already under construction</a></div>
+						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<!--Contact Us-->
 

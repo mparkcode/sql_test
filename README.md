@@ -1,80 +1,75 @@
 # Space Portal
 
-This project is meant to be a sleek dashboard for space-related activity
+This project is a sleek dashboard for important space-related activity
  
 ## UX
+
+The site has a space feel to it, it uses orbitron font and has a color scheme and background images that are space-focused
+
+### User Stories
  
-- As a space enthusiast, I want to know when the ISS is going to fly over my house so I can track it with my family
-
+- As a space enthusiast, I want to know where the ISS is, so I can track it
 - As a Satellite vendor, I want to get the most updated news stories to see what is happening in the industry
+- As a blogger and former astronaut, I want to be able to email the creators of Space Portal to recommend content they should add to their website 
 
-- As a blogger and former astronaut, I want to be able to email the creators of Space Portal to recommend content they should add to their website. 
+### Wireframe
 
 ![Wireframe](assets/wireframe/wireframe.jpg)
 
-## Features
+### Page Features
 
-Quickly connects users to some of the interesting aspects of space and also presents them with current information
-
-NASA Image of the Day
-ISS Feed and Overpass Calculation based on user location
-Social Media Feed
-Contact Us Page
+- Parralax page scrolling (html)
+- NASA Astronomy Picture of the Day (NASA Open API)
+- Current user location in comparison with ISS location (NASA Open API)
+- Social Media Feed (Spaceflight Now API)
+- Contact Us (EmailJS)
  
-### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
 ### Features Left to Implement
-- Another feature idea
+
+- Calculate the next time the ISS will pass overhead based on your position
+- Graph the orbital inclination of the ISS
+- Be able to search for a variety of satellites and see their position
 
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
+- HTML 
+    - The project uses HTML to render the page in the browser
+- [CSS](https://stackpath.bootstrapcdn.com)  
+    - The project uses CSS to style the pages and uses Bootstrap to improve styling and icons\
+- Javascript
+    - The project uses Javascript to update elements within the HTML document (DOM) and pull data in from external sources
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
-- Javascript
-- CSS
-- HTML
-- Leaflet
-- APIs
-
+- [Leaflet](https://leafletjs.com)
+    - The project uses leaflet to render a map, place the users location, and plot the location of the ISS
+- [emailJS](https://emailjs.com)
+    - The project uses emailJS to enable users to submit inquiries directly from the page
+- [SpaceFlight Now](http://spaceflightnow.com)
+    - The project uses the SpaceFlight Now API to pull in images, links, headlines, and brief descriptions for the most up to date space news
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+### Map Choice
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+- I went with leafletJS over google maps because Google Maps API calls is throttled
+- I added the ability to identify an error and console log the respective issues when an API call did not go through
+- Reactive design
+- Thorough user testing
+1. NASA APOD
+    1. Is it a video?
+    2. Does the file size works
+2. ISS position
+    1. Don't allow the browser to see your position (is there a default it can revert to)
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+The deployment at this stage is still relatively simple, once I thoroughly tested the site and got feedback from my mentor, I created a separate Git Branch for the final version and deployed via Github. 
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
+To run the project locally, you should just have to download all the files, place the root in the same folder, and click on index.html to open in browser.
 
 
 ## Credits
