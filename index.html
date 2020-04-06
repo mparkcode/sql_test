@@ -21,6 +21,13 @@
 	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
 		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 		crossorigin=""></script>
+	<!--EmailJS-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+	<script type="text/javascript">
+		(function(){
+      emailjs.init("user_yBxgXA452MRHFPfUPb7Kd");
+        })();
+	</script>
 
 	<title>Space Portal</title>
 </head>
@@ -158,16 +165,16 @@
 			<h2 id="contact">Send Us a Tight-beam</h2>
 		</div>
 		<div class="row">
-        	<h4>Fill out the below form to make contact with the Space Portal Team</h4>
+			<h4>Fill out the below form to make contact with the Space Portal Team</h4>
 		</div>
-        <div class="row bg-color-contact"> 
+		<div class="row">
 			<div class="center-form">
-				<form>
-                <input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+            <form onsubmit="return sendMail(this);">
+				<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
 				<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
-				<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Project Description" required></textarea>
+				<textarea rows="5" name="contactsummary" class="form-control" id="contactsummary" placeholder="Write your message here:" required></textarea>
 				<button type="submit" class="btn btn-secondary center-block">Send</button>
-				</form>
+            </form>
 			</div>
 		</div>
 	</div>
@@ -176,5 +183,7 @@
 
 <!--Link to JS file-->
 <script src="assets/js/portal.js"></script>
+
+
 
 </html>

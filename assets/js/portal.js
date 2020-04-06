@@ -48,7 +48,7 @@ $.ajax({
   //  });
 //}
 
-//Calculate Overpass
+//Calculate myLocation
 var userPosition = document.getElementById("overpass");
 
 function getLocation() {
@@ -62,4 +62,22 @@ function getLocation() {
 function showPosition(position) {
     userPosition.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
+}
+
+//EmailJS//
+function sendMail(contactForm) {
+    emailjs.send("dan_gunderson", "template_gUHgrGED", {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.emailaddress.value,
+        "request": contactForm.contactsummary.value
+    })
+    .then(
+        function(response) {
+            console.log("SUCCESS", response);
+        },
+        function(error) {
+            console.log("FAILED", error);
+        }
+    );
+    return false;
 }
