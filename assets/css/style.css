@@ -1,15 +1,33 @@
+/*-------Background-------*/
+body {
+  background-image: url("../images/background/image-parallax-2.jpg"); /*--Photo by Ivana Cajina on Unsplash--*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
 /*---------------Text---------------*/
 
 h1, h2 {
     font-family: 'Orbitron', sans-serif;
+    color: #3D7AFD;
 }
 
 h3, h4, h5, p, li {
     font-family: 'Source Code Pro', monospace;
+    color: white;
 }
 
+/*-------Styling------*/
 .jumbotron {
+    padding-top: 5rem;
     margin-top: 2rem;
+}
+
+.jumbotron  h1{
+    color: #1F0954;
 }
 
 .navbar li {
@@ -35,3 +53,7 @@ button[type="submit"] {
     margin-top: 15px;
     margin-bottom: 20px;
 }
+
+
+
+

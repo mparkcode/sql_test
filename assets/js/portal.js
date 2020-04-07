@@ -22,12 +22,12 @@ var marker = L.marker([29.7, -95.36], { icon: issIcon }).addTo(mymap); //need to
 $.ajax({
     url: "https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
     success: function (APOD) {
-        document.getElementById("img").innerHTML = "<img src=" + APOD.url + " sytle='width:100%;' />";
+        document.getElementById("img").innerHTML = "<img src=" + APOD.url + ">"; 
         document.getElementById("copyright").innerHTML = "By " + APOD.copyright;
         document.getElementById("title").innerHTML = APOD.title;
         document.getElementById("explanation").innerHTML = APOD.explanation;
     }
-});
+}); 
 //Get ISS Position
 //function getValue() {
   //  var res;
