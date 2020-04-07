@@ -12,7 +12,7 @@ body {
 
 h1, h2 {
     font-family: 'Orbitron', sans-serif;
-    color: #3D7AFD;
+    color: white;
 }
 
 h3, h4, h5, p, li {
@@ -26,8 +26,8 @@ h3, h4, h5, p, li {
     margin-top: 2rem;
 }
 
-.jumbotron  h1{
-    color: #1F0954;
+.jumbotron h1 {
+    color: black;
 }
 
 .navbar li {
@@ -38,7 +38,7 @@ h3, h4, h5, p, li {
     justify-content: center;
 }
 
-#mapid { 
+#map { 
     height: 400px; 
 }
 
@@ -55,5 +55,30 @@ button[type="submit"] {
 }
 
 
+/*-----ISS-------*/
+.iss-icon span{
+  display: inline-block;
+  border: 1px solid yellow;
+  border-radius: 50%;
 
+/*animation: blink .7s alternate infinite;*/
+  height: 24px; 
+  width: 24px;
+  animation: pulse .7s infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes pulse{
+  0%{
+    transform: scale(1.5);
+    opacity: .2;
+  }
+  50%{
+    opacity: .8;
+  }
+  100%{
+    transform: scale(.1);
+    opacity: 1;
+  }
+}
 

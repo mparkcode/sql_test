@@ -1,5 +1,5 @@
 //ISS Map
-var mymap = L.map('mapid').setView([29.760427, -95.369804], 13);
+var map = L.map('map').setView([29.760427, -95.369804], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -8,7 +8,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     tileSize: 512,
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiZ3VuZHkyNyIsImEiOiJjazg2bmtqdDUwMjZuM2ZxdnhybjRiOGFjIn0.4SvprV2vMhuOHhknpzhE2Q'
-}).addTo(mymap);
+}).addTo(map);
 
 var issIcon = L.icon({
     iconUrl: 'assets/images/icons/iss.png',
@@ -16,7 +16,7 @@ var issIcon = L.icon({
     iconAnchor: [4, 62],
 });
 
-var marker = L.marker([29.7, -95.36], { icon: issIcon }).addTo(mymap); //need to wire this up to actual ISS location
+var marker = L.marker([29.7, -95.36], { icon: issIcon }).addTo(map); //need to wire this up to actual ISS location
 
 //APOD
 $.ajax({
@@ -28,25 +28,6 @@ $.ajax({
         document.getElementById("explanation").innerHTML = APOD.explanation;
     }
 }); 
-//Get ISS Position
-//function getValue() {
-  //  var res;
-  //  $.ajax({
-      //  type: 'GET',
-      //  dataType: 'jsonp',
-     //   url: 'http://api.open-notify.org/iss-now.json',
-     //   async: false,
-     //   crossDomain: true,
-     //   complete: function (data) {
-       //     if (data.readyState === 4 && data.status === 200) {
-          //      Lat = data.responseJSON.iss_position.latitude;
-            //    Long = data.responseJSON.iss_position.longitude;
-          //      LatLong(Lat, Long);
-        //        console.log(Lat);
-      //      }
-    //    }
-  //  });
-//}
 
 //Calculate myLocation
 var userPosition = document.getElementById("overpass");
