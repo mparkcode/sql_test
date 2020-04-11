@@ -54,7 +54,8 @@
 
 	<!--NASA Astronomy Picture of the Day-->
 
-	<div class="container-fluid">
+	<div class="container-fluid pt-3">
+		<h2>NASA Astronomy Picture of the Day</h2>
 		<div class="row apod">
 			<div id="img"></div>
 		</div>
@@ -70,11 +71,10 @@
 		<h2 id="iss">International Space Station (ISS)</h2>
 		<div class="row">
 			<div class="col-sm-6">
-				<h2> ISS position </h2>
 				<div id="map"></div>
 			</div>
 			<div class="col-sm-6">
-				<h2> ISS info </h2>
+				<h3> ISS info </h3>
 				<p>Click the button to find out your current positon</p>
 				<button onclick="getLocation()">Calculate</button>
 				<p id="overpass"></p>
@@ -85,8 +85,8 @@
 
 	<div class="container-fluid pt-3" id="spaceflight-div">
 		<h2 id="news">Space News</h2>
-		<div class="row">
-			<div class="col-sm-4" style="padding: 3px">
+		<div class="row" style="padding: 1rem;">
+			<div class="col-sm-4">
 				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
 					<div class="card-body">
 						<div class="card-title h4" id="news-title"><a
@@ -97,7 +97,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4" style="padding: 3px">
+			<div class="col-sm-4">
 				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
 					<div class="card-body">
 						<div class="card-title h4" id="news-title"><a
@@ -108,7 +108,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4" style="padding: 3px">
+			<div class="col-sm-4">
 				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
 					<div class="card-body">
 						<div class="card-title h4" id="news-title"><a
@@ -120,8 +120,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-4" style="padding: 3px">
+		<div class="row" style="padding: 1rem;">
+			<div class="col-sm-4">
 				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
 					<div class="card-body">
 						<div class="card-title h4" id="news-title"><a
@@ -132,7 +132,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4" style="padding: 3px">
+			<div class="col-sm-4">
 				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
 					<div class="card-body">
 						<div class="card-title h4" id="news-title"><a
@@ -143,7 +143,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-4" style="padding: 3px">
+			<div class="col-sm-4">
 				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
 					<div class="card-body">
 						<div class="card-title h4" id="news-title"><a
@@ -160,20 +160,18 @@
 	<!--Contact Us-->
 
 	<div class="container-fluid pt-3">
-		<div class="row">
-			<h2 id="contact">Send Us a Tight-beam</h2>
-		</div>
-		<div class="row">
+		<h2 id="contact">Send Us a Tight-beam</h2>
+		<div class="row" style="margin-left: 0px; margin-right: 0px;">
 			<h4>Fill out the below form to make contact with the Space Portal Team</h4>
 		</div>
 		<div class="row">
 			<div class="center-form">
-            <form onsubmit="return sendMail(this);">
-				<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
-				<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
-				<textarea rows="5" name="contactsummary" class="form-control" id="contactsummary" placeholder="Write your message here:" required></textarea>
-				<button type="submit" class="btn btn-secondary center-block">Send</button>
-            </form>
+				<form onsubmit="return sendMail(this);">
+					<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
+					<input type="text" name="emailaddress" class="form-control" id="emailaddress" placeholder="Email" required/>
+					<textarea rows="5" name="contactsummary" class="form-control" id="contactsummary" placeholder="Write your message here:" required></textarea>
+					<button type="submit" class="btn btn-secondary center-block">Send</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -181,7 +179,7 @@
 </body>
 
 <!--Link to JS file-->
-<script src="assets/js/portal.js"></script>
+<script src="assets/js/portal_copy.js"></script>
 
 
 

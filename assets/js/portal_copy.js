@@ -34,16 +34,17 @@ function showISS() {
 showISS();
 
 
-//APOD
+//NASA Astronomy Picture of the Day (APOD)
 $.ajax({
     url: "https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
     success: function (APOD) {
-        document.getElementById("img").innerHTML = "<img src=" + APOD.url + ">"; 
+        document.getElementById("img").innerHTML = '<img alt="NASA APOD" style="max-height: 600px; max-width: 100%;" src=' + APOD.hdurl + ' />'; 
         document.getElementById("copyright").innerHTML = "By " + APOD.copyright;
         document.getElementById("title").innerHTML = APOD.title;
         document.getElementById("explanation").innerHTML = APOD.explanation;
     }
 }); 
+
 
 //Calculate myLocation
 var userPosition = document.getElementById("overpass");

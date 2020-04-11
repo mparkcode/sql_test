@@ -10,9 +10,15 @@ body {
 
 /*---------------Text---------------*/
 
-h1, h2 {
+h1 {
     font-family: 'Orbitron', sans-serif;
     color: white;
+    font-display: bold;
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #75cff0;
 }
 
 h3, h4, h5, p, li {
@@ -21,21 +27,32 @@ h3, h4, h5, p, li {
 }
 
 /*-------Styling------*/
-.jumbotron {
-    padding-top: 5rem;
-    margin-top: 2rem;
-}
-
-.jumbotron h1 {
-    color: black;
-}
-
 .navbar li {
     font-family:'Orbitron', monospace;
 }
 
+.jumbotron {
+    padding-top: 5rem;
+    margin-top: 2rem;
+    background-color: inherit;
+}
+
+.jumbotron h1 {
+    color: white;
+    font-size: 4rem;
+}
+
+#img {
+    border-style: solid;
+    border-width: 12px;
+    border-color: white;
+    border-radius: 3%;
+}
+
 .apod {
     justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 #map { 
@@ -47,6 +64,10 @@ h3, h4, h5, p, li {
     margin: 3px auto;
     width: 60%;
     max-width: 80%;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 1rem;
 }
 
 button[type="submit"] {
