@@ -1,3 +1,14 @@
+//NASA Astronomy Picture of the Day (APOD)
+$.ajax({
+    url: "https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
+    success: function (APOD) {
+        document.getElementById("img").innerHTML = '<img alt="NASA APOD" style="max-height: 600px; max-width: 100%;" src=' + APOD.hdurl + ' />';
+        document.getElementById("copyright").innerHTML = "By " + APOD.copyright;
+        document.getElementById("title").innerHTML = APOD.title;
+        document.getElementById("explanation").innerHTML = APOD.explanation;
+    }
+});
+
 //Map Setup
 var map = L.map('map').setView([0, 0], 2);
 
@@ -11,11 +22,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiZ3VuZHkyNyIsImEiOiJjazg2bmtqdDUwMjZuM2ZxdnhybjRiOGFjIn0.4SvprV2vMhuOHhknpzhE2Q'
 }).addTo(map);
 
-//ISS Data Ingest
+//ISS Position Ingest
 function moveISS () {
     $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
         var lat = data['iss_position']['latitude'];
         var lon = data['iss_position']['longitude'];
+
+        $('#lat').html(lat);
+        $('#lon').html(lon);
 
         iss.setLatLng([lat, lon]);
         map.panTo([lat, lon]);
@@ -35,22 +49,13 @@ var iss = L.marker([0, 0], {icon: ISSIcon}).addTo(map);
 
 moveISS();
 
-
-//document.getElementById("lat").innerHTML = <p> lat </p>
-//document.getElementById("lon").innerHTML = <p> lon </p>
-
-
 //People in space
 $.getJSON('http://api.open-notify.org/astros.json?callback=?', function(data) {
-    var number = data['number'];
-    $('#spacepeeps').html(number);
+   var number = data['number'];
+   $('#soulsonboard').html(number);
 
-    data['people'].forEach(function (d) {
-         $('#astronames').append('<li>' + d['name'] + '</li>');
-    });
-});
+ });
 
-//NASA Astronomy Picture of the Day (APOD)
 $.ajax({
     url: "https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
     success: function (APOD) {
@@ -61,10 +66,30 @@ $.ajax({
     }
 });
 
+//EmailJS//
+function sendMail(contactForm) {
+    emailjs.send("dan_gunderson", "template_gUHgrGED", {
+        "from_name": contactForm.name.value,
+        "from_email": contactForm.emailaddress.value,
+        "request": contactForm.contactsummary.value
+    })
+    .then(
+        function(response) {
+            console.log("SUCCESS", response);
+        },
+        function(error) {
+            console.log("FAILED", error);
+        }
+    );
+    return false;
+}
 
-//Calculate myLocation
+
+
+
+//The below code is the start of calculating the next ISS overpass, which I did not have time to finish for this project but is a feature I would add in a future release
+
 //var userPosition = document.getElementById("overpass");
-
 //function getLocation() {
 //    if (navigator.geolocation) {
 //        navigator.geolocation.getCurrentPosition(showPosition);
@@ -86,22 +111,3 @@ $.ajax({
 //    userPosition.innerHTML = "Latitude: " + position.coords.latitude +
 //        "<br>Longitude: " + position.coords.longitude;
 //}
-
-
-//EmailJS//
-function sendMail(contactForm) {
-    emailjs.send("dan_gunderson", "template_gUHgrGED", {
-        "from_name": contactForm.name.value,
-        "from_email": contactForm.emailaddress.value,
-        "request": contactForm.contactsummary.value
-    })
-    .then(
-        function(response) {
-            console.log("SUCCESS", response);
-        },
-        function(error) {
-            console.log("FAILED", error);
-        }
-    );
-    return false;
-}
