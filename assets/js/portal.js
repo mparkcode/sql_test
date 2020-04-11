@@ -66,6 +66,52 @@ $.ajax({
     }
 });
 
+//News articles provided by NewsApi.org
+//var url = 'http://newsapi.org/v2/everything?' +
+  //        'q=Space&' +
+    //      'sortBy=popularity&' +
+      //    'number_of_items:"10"' +
+        //  'apiKey=af26ee1b125547a98e4c4414986345ab';
+
+//var req = new Request(url);
+
+//fetch(req)
+//    .then(function(response) {
+//        console.log(response.json());
+//    })
+
+$(function () {
+
+    var topic = "space";
+    //Italian sources
+    var sources = ["google-news", "associated-press","bleacher-report","business-insider"];
+    //some of the principles English/American sources
+    //sources: ["abc-news", "ars-technica", "google-news", "associated-press","bleacher-report","business-insider"];
+    var max_articles = 6;
+
+    $.ajax({
+        url      : "https://newsapi.org/v2/everything?apiKey=af26ee1b125547a98e4c4414986345ab&q="+topic+"&sources="+sources,
+        dataType : 'json',
+        success  : function (data) {
+            $(".news").empty();
+            if (data.status == "ok" && data.totalResults > 0) {
+                console.log("https://newsapi.org/v2/everything?apiKey=af26ee1b125547a98e4c4414986345ab&q="+topic+"&sources="+sources);
+
+                var counter = 0;
+
+                $.each(data.articles, function (i, e) {
+                    if(counter < max_articles){
+                         $(".news").append('<li>' + '<a href=\"' + e.url + '\">' + e.title + '</a></li>');
+                         counter++;
+                    }
+                });
+            }else{
+                $('.news').append('<li>No news were found with these parameters.</li>')
+            }
+        }
+    });
+});
+
 //EmailJS//
 function sendMail(contactForm) {
     emailjs.send("dan_gunderson", "template_gUHgrGED", {

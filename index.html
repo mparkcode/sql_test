@@ -28,11 +28,11 @@
       emailjs.init("user_yBxgXA452MRHFPfUPb7Kd");
         })();
 	</script>
-
 	<title>Space Portal</title>
 </head>
 
 <body>
+
 	<!--Navbar and Jumbotron-->
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
@@ -60,27 +60,31 @@
 			<div id="img"></div>
 		</div>
 		<div class="pt-3">
-			<h2 id="title"></h2>
+			<h3 id="title"></h3>
 			<p id="explanation"></p>
 			<p id="copyright"></p>
 		</div>
 	</div>
 
 	<!--ISS Information-->
+
 	<div class="container-fluid pt-3" id="iss">
-		<h2 id="iss">International Space Station (ISS)</h2>
+		<h2 id="iss" style="padding-top:5rem;">International Space Station (ISS)</h2>
 		<div class="row">
+
+			<!--Map and Position-->
 			<div class="col-sm-6 pt-3">
 				<h3 style="justify-content:center;">Moving Map</h3>
 				<div id="map"></div>
-				<div class="row pt-3">
-					<ul>
-						<li>Latitude: <span id="lat"></span></li>
-						<li>Longitude: <span id="lon"></span></li>
-					</ul>
+					<div class="row pt-3">
+						<ul>
+							<li>Latitude: <span id="lat"></span></li>
+							<li>Longitude: <span id="lon"></span></li>
+						</ul>
+					</div>
 			</div>
-		</div>
 
+			<!--Youtube and Astronauts-->
 			<div class="col-sm-6 pt-3">
 				<h3 style="justify-content:center;">Live Feed</h3>
 				<iframe width="100%" height=400px; src="https://www.youtube.com/embed/EEIk7gwjgIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -91,86 +95,21 @@
 			</div>
 		</div>
 	</div>
-	<!--SpaceFlight Now-->
 
-	<div class="container-fluid pt-3" id="spaceflight-div">
-		<h2 id="news">Space News</h2>
-		<div class="row" style="padding: 1rem;">
-			<div class="col-sm-4">
-				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
-					<div class="card-body">
-						<div class="card-title h4" id="news-title"><a
-								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
-								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
-								already under construction</a></div>
-						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
-					<div class="card-body">
-						<div class="card-title h4" id="news-title"><a
-								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
-								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
-								already under construction</a></div>
-						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
-					<div class="card-body">
-						<div class="card-title h4" id="news-title"><a
-								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
-								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
-								already under construction</a></div>
-						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row" style="padding: 1rem;">
-			<div class="col-sm-4">
-				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
-					<div class="card-body">
-						<div class="card-title h4" id="news-title"><a
-								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
-								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
-								already under construction</a></div>
-						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
-					<div class="card-body">
-						<div class="card-title h4" id="news-title"><a
-								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
-								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
-								already under construction</a></div>
-						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="shadow card" style="height: 100%;"><img class="card-img-top" id="news-img" src="Card1.html" style="height: 15rem;">
-					<div class="card-body">
-						<div class="card-title h4" id="news-title"><a
-								href="https://www.nasaspaceflight.com/2020/04/spacex-starship-sn3-ground-flight-testing/"
-								target="_blank noopener noreferrer">Starship SN3 failure due to bad commanding. SN4
-								already under construction</a></div>
-						<div class="mb-2 text-muted card-subtitle h6" id="news-credit">NASA Spaceflight | 4/5/2020</div>
-					</div>
-				</div>
-			</div>
-		</div>
+	<!--Space News-->
+
+	<div class="container-fluid pt-3">
+		<div class="row">
+		<div class="col-md-12 feature-box newsFeed">
+			<i class="icon-pencil icon" data-toggle="modal" data-target="#myModal"></i>
+		<h2 id="news" style="padding-top:5rem;">Space News</h2>
+		<ul class="news"></ul>
 	</div>
 
 	<!--Contact Us-->
 
 	<div class="container-fluid pt-3">
-		<h2 id="contact">Send Us a Tight-beam</h2>
+		<h2 id="contact" style="padding-top:5rem;">Send Us a Tight-beam</h2>
 		<div class="row" style="margin-left: 0px; margin-right: 0px;">
 			<h4>Fill out the below form to make contact with the Space Portal Team</h4>
 		</div>
@@ -190,7 +129,5 @@
 
 <!--Link to JS file-->
 <script src="assets/js/portal.js"></script>
-
-
 
 </html>
