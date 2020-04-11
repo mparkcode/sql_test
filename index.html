@@ -67,22 +67,23 @@
 	</div>
 
 	<!--ISS Information-->
-	<div class="container-fluid pt-3" id="iss">
+		<div class="container-fluid pt-3" id="iss">
 		<h2 id="iss">International Space Station (ISS)</h2>
 		<div class="row">
 			<div class="col-sm-6">
 				<div id="map"></div>
 			</div>
 			<div class="col-sm-6">
-				<h3> ISS info </h3>
-				<p>Click the button to find out your current positon</p>
-				<button onclick="getLocation()">Calculate</button>
-				<p id="overpass"></p>
+				<h3>ISS Info</h3>
+				<h5>Current ISS Position </h5>
+				<h5>Latitude: <span id="lat"></span></h5>
+				<h5>Longitude: <span id="lon"></span></h5>
+				<h5>Number of people in space: <span id="spacepeeps"></span></h4>
 			</div>
 		</div>
 	</div>
-	<!--SpaceFlight Now-->
-
+	
+    <!--SpaceFlight Now-->
 	<div class="container-fluid pt-3" id="spaceflight-div">
 		<h2 id="news">Space News</h2>
 		<div class="row" style="padding: 1rem;">
@@ -179,7 +180,7 @@
 </body>
 
 <!--Link to JS file-->
-<script src="assets/js/portal_copy.js"></script>
+<script src="assets/js/portal.js"></script>
 
 
 
