@@ -32,14 +32,19 @@ h3, h4, h5, p, li {
 }
 
 .jumbotron {
-    padding-top: 5rem;
-    margin-top: 2rem;
+    margin: auto;
     background-color: inherit;
+    height: 100vh;
 }
 
 .jumbotron h1 {
     color: white;
     font-size: 4rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #img {
@@ -55,8 +60,8 @@ h3, h4, h5, p, li {
     padding-right: 1rem;
 }
 
-#map { 
-    height: 400px; 
+#map {
+    height: 400px;
 }
 
 .center-form {
@@ -83,7 +88,7 @@ button[type="submit"] {
   border-radius: 50%;
 
 /*animation: blink .7s alternate infinite;*/
-  height: 24px; 
+  height: 24px;
   width: 24px;
   animation: pulse .7s infinite alternate;
   transform-origin: center center;
@@ -102,4 +107,3 @@ button[type="submit"] {
     opacity: 1;
   }
 }
-
