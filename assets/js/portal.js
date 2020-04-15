@@ -53,41 +53,14 @@ moveISS();
 $.getJSON('http://api.open-notify.org/astros.json?callback=?', function(data) {
    var number = data['number'];
    $('#soulsonboard').html(number);
-
  });
 
-$.ajax({
-    url: "https://api.nasa.gov/planetary/apod?api_key=dsT6CrZDV5ElMadg5VA98MakyGLRFptKrw5h0BNN",
-    success: function (APOD) {
-        document.getElementById("img").innerHTML = '<img alt="NASA APOD" style="max-height: 600px; max-width: 100%;" src=' + APOD.hdurl + ' />';
-        document.getElementById("copyright").innerHTML = "By " + APOD.copyright;
-        document.getElementById("title").innerHTML = APOD.title;
-        document.getElementById("explanation").innerHTML = APOD.explanation;
-    }
-});
-
-//News articles provided by NewsApi.org
-//var url = 'http://newsapi.org/v2/everything?' +
-  //        'q=Space&' +
-    //      'sortBy=popularity&' +
-      //    'number_of_items:"10"' +
-        //  'apiKey=af26ee1b125547a98e4c4414986345ab';
-
-//var req = new Request(url);
-
-//fetch(req)
-//    .then(function(response) {
-//        console.log(response.json());
-//    })
-
+//News Feed 
 $(function () {
 
-    var topic = "space";
-    //Italian sources
+    var topic = "astronomy";
     var sources = ["google-news", "associated-press","bleacher-report","business-insider"];
-    //some of the principles English/American sources
-    //sources: ["abc-news", "ars-technica", "google-news", "associated-press","bleacher-report","business-insider"];
-    var max_articles = 6;
+    var max_articles = 5;
 
     $.ajax({
         url      : "https://newsapi.org/v2/everything?apiKey=af26ee1b125547a98e4c4414986345ab&q="+topic+"&sources="+sources,
@@ -101,7 +74,7 @@ $(function () {
 
                 $.each(data.articles, function (i, e) {
                     if(counter < max_articles){
-                         $(".news").append('<li>' + '<a href=\"' + e.url + '\">' + e.title + '</a></li>');
+                         $(".news").append('<li>' + '<a target="_blank" style="text-decoration: none;" href=\"' + e.url + '\">' + e.title + '</a></li>');
                          counter++;
                     }
                 });
@@ -122,6 +95,7 @@ function sendMail(contactForm) {
     .then(
         function(response) {
             console.log("SUCCESS", response);
+            alert("Transmission received!");
         },
         function(error) {
             console.log("FAILED", error);
@@ -129,31 +103,3 @@ function sendMail(contactForm) {
     );
     return false;
 }
-
-
-
-
-//The below code is the start of calculating the next ISS overpass, which I did not have time to finish for this project but is a feature I would add in a future release
-
-//var userPosition = document.getElementById("overpass");
-//function getLocation() {
-//    if (navigator.geolocation) {
-//        navigator.geolocation.getCurrentPosition(showPosition);
-//    } else {
-//        userPosition.innerHTML = "Geolocation is not supported by this browser.";
-//    }
-
-    //Calculate overpass
-//    var overpassURL = "http://api.open-notify.org/iss-pass.json?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&callback=CALLBACK";
-//    $.getJSON(overpassURL, function(data) {
-//        data['response'].forEach(function (d) {
-//            var date = new Date(d['risetime']*1000);
-//             $('#isspass').append('<li>' + date.toString() + '</li>');
-//        });
-//    });
-//}
-
-//function showPosition(position) {
-//    userPosition.innerHTML = "Latitude: " + position.coords.latitude +
-//        "<br>Longitude: " + position.coords.longitude;
-//}
