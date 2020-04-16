@@ -24,19 +24,30 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 //ISS Position Ingest
 function moveISS () {
-    $.getJSON('http://api.open-notify.org/iss-now.json?callback=?', function(data) {
-        var lat = data['iss_position']['latitude'];
+   
+    $.ajax({
+          url: 'https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json?callback=?',
+          type: 'GET',
+          dataType: 'json',
+          beforeSend: function(request){
+       request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+   },
+          success: function() { var lat = data['iss_position']['latitude'];
         var lon = data['iss_position']['longitude'];
 
         $('#lat').html(lat);
         $('#lon').html(lon);
 
         iss.setLatLng([lat, lon]);
-        map.panTo([lat, lon]);
+        map.panTo([lat, lon]); },
+        error: function() { alert('boo!'); },
+        });
+      
 
-    });
+      
     setTimeout(moveISS, 5000);
 }
+
 
 //Add custom icon
 var ISSIcon = L.icon({
